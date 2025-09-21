@@ -1,63 +1,46 @@
-📌 Digital Bank Customer Churn Prediction
-📖 Project Overview
+# 📌 Digital Bank Customer Churn Prediction
 
-This project focuses on predicting customer churn in digital banking using machine learning.
-Customer churn (when clients stop using the service) is a critical issue for banks, since acquiring new customers is much more expensive than retaining existing ones.
+This project analyzes customer churn in digital banking using machine learning.  
+The goal is to identify key factors influencing churn and provide business recommendations.
 
-Through this project, I analyzed 10,000+ customer records to identify the main factors driving churn and built predictive models to support customer retention strategies.
+---
 
-⚙️ Tools & Technologies
+## 📖 Project Overview
+- Dataset: Digital Bank Customers (10,000+ rows, 13 features)  
+- Target: `Exited` (1 = churn, 0 = retained)  
+- Industry Context: High churn impacts retention costs and profitability  
 
-Python: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+---
 
-Machine Learning Models: Logistic Regression, Random Forest, LightGBM, XGBoost, HistGradientBoosting
+## ❓ Problem Statement
+Customer churn is costly for digital banks because acquiring new customers is far more expensive than retaining existing ones.  
+This project aims to:
+- Identify main churn drivers  
+- Build predictive models  
+- Provide actionable retention strategies  
 
-Evaluation Metrics: ROC-AUC, PR-AUC, Recall@Top-10% (chosen due to imbalanced dataset)
+---
 
-🔍 Exploratory Data Analysis (EDA) – Key Insights
+## 🔍 Key Insights
+- Customers with **3–4 products** = higher churn  
+- **Female churn rate** higher (25% vs 16% male)  
+- **Germany** = highest churn risk (33%)  
+- Older customers (**45+**) churn more  
+- Inactive + high balance = most risky segment  
 
-Product Usage: Customers with 3–4 products showed the highest churn risk.
+---
 
-Gender: Female customers churned more often (25%) compared to males (16%).
+## 🤖 Model Performance
+- **Best Model**: HistGradientBoosting  
+- **ROC-AUC**: 0.86  
+- **PR-AUC**: 0.70  
+- **Recall@Top-10%**: 0.82  
 
-Geography: Customers in Germany had the highest churn rate (~33%, nearly 2× France/Spain).
+---
 
-Age: Older customers (45+) were more likely to churn.
+## 💡 Business Recommendations
+- High-Risk → RM call ≤48h, fee waiver, reactivation, product simplification  
+- Medium-Risk → digital nudges, education, light incentives  
+- Low-Risk → loyalty & referral program  
 
-Engagement: Inactive members with high balances are particularly at risk.
-
-🤖 Model Performance
-
-The best performing model was HistGradientBoosting with:
-
-ROC-AUC ≈ 0.86
-
-PR-AUC ≈ 0.70
-
-Recall@Top-10% ≈ 0.82
-
-👉 This means the model successfully identified the majority of high-risk customers within the top 10% scoring segment.
-
-💡 Business Recommendations
-
-High-Risk Customers (p ≥ 0.20)
-
-Proactive RM calls within 48 hours
-
-Fee waiver / product simplification
-
-Reactivation campaigns & autopay reminders
-
-Medium-Risk Customers (0.10 ≤ p < 0.20)
-
-Digital nudges (in-app, WhatsApp, email)
-
-Product education & light incentives
-
-Low-Risk Customers (p < 0.10)
-
-Loyalty programs & referral bonuses
-
-Cross-sell opportunities
-
-📂 Project Structure
+---
